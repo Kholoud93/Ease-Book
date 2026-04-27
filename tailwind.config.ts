@@ -1,8 +1,17 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./app/app.vue",
+    "./app/pages/**/*.{vue,js,ts}",
+    "./app/components/**/*.{vue,js,ts}",
+    "./app/layouts/**/*.{vue,js,ts}",
+    "./app/composables/**/*.{js,ts}",
+    "./app/plugins/**/*.{js,ts}",
+    "./app/assets/**/*.css"
+  ],
   prefix: "",
   theme: {
     container: {
@@ -120,5 +129,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 } satisfies Config;
