@@ -1,6 +1,6 @@
 <template>
-  <footer class="mt-32 border-t border-border/60 bg-secondary/40">
-    <div class="container py-16 grid gap-12 md:grid-cols-4">
+  <footer class="mt-20 border-t border-border/60 bg-secondary/40 md:mt-28">
+    <div class="container py-12 grid gap-10 md:grid-cols-4 md:py-16">
       <div class="md:col-span-2 max-w-sm">
         <div class="font-display text-3xl">BookEase</div>
         <p class="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class="border-t border-border/60">
-      <div class="container flex flex-col md:flex-row items-center justify-between py-6 text-xs text-muted-foreground">
+      <div class="container flex flex-col gap-2 md:flex-row md:items-center justify-between py-6 text-center md:text-left text-xs text-muted-foreground">
         <span>© {{ new Date().getFullYear() }} BookEase Platform. Crafted with care.</span>
         <span class="font-display italic">Calm, considered, confirmed.</span>
       </div>

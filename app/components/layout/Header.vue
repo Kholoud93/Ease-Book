@@ -14,9 +14,9 @@ const navClass = (path: string) =>
 
 <template>
   <header class="sticky top-0 z-40 w-full border-b border-border/60 bg-background/80 backdrop-blur-xl">
-    <div class="container flex h-16 items-center justify-between">
+    <div class="container flex h-14 items-center justify-between md:h-16">
       <NuxtLink to="/" class="flex items-baseline gap-1">
-        <span class="font-display text-2xl tracking-tight">BookEase</span>
+        <span class="font-display text-xl tracking-tight sm:text-2xl">BookEase</span>
         <span class="h-1.5 w-1.5 rounded-full bg-accent" />
       </NuxtLink>
       <nav class="hidden md:flex items-center gap-8 text-sm">
@@ -41,6 +41,13 @@ const navClass = (path: string) =>
           <Icon name="lucide:layout-grid" size="16" />
         </NuxtLink>
       </div>
+    </div>
+    <div class="border-t border-border/60 md:hidden">
+      <nav class="container flex items-center justify-between gap-3 py-2 text-sm">
+        <NuxtLink to="/search" :class="navClass('/search')">Find a doctor</NuxtLink>
+        <NuxtLink to="/dashboard" :class="navClass('/dashboard')">My bookings</NuxtLink>
+        <NuxtLink to="/favorites" :class="navClass('/favorites')">Saved</NuxtLink>
+      </nav>
     </div>
   </header>
 </template>

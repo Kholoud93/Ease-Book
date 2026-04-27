@@ -26,9 +26,9 @@ const isFavorite = computed(() => favoritesStore.isFavorite(props.doctor.id));
           loading="lazy"
           class="h-full w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-105"
         />
-        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/70 via-foreground/10 to-transparent p-5">
+        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/70 via-foreground/10 to-transparent p-4 sm:p-5">
           <p class="text-xs uppercase tracking-[0.2em] text-background/80">{{ props.doctor.specialty }}</p>
-          <h3 class="font-display text-2xl text-background mt-1">{{ props.doctor.name }}</h3>
+          <h3 class="font-display text-xl sm:text-2xl text-background mt-1">{{ props.doctor.name }}</h3>
         </div>
       </div>
     </NuxtLink>
@@ -43,11 +43,11 @@ const isFavorite = computed(() => favoritesStore.isFavorite(props.doctor.id));
         :class="isFavorite ? 'fill-accent text-accent transition' : 'text-foreground transition'"
       />
     </button>
-    <div class="mt-4 flex items-start justify-between gap-3">
+    <div class="mt-4 flex items-start justify-between gap-2 sm:gap-3">
       <div>
         <div class="flex items-center gap-1.5 text-xs text-muted-foreground">
           <Icon name="lucide:map-pin" size="12" />
-          <span>{{ props.doctor.clinic }}, {{ props.doctor.city }}</span>
+          <span class="line-clamp-1">{{ props.doctor.clinic }}, {{ props.doctor.city }}</span>
         </div>
         <div class="mt-1.5 flex items-center gap-1 text-xs">
           <Icon name="lucide:star" size="12" class="fill-accent text-accent" />
@@ -55,8 +55,8 @@ const isFavorite = computed(() => favoritesStore.isFavorite(props.doctor.id));
           <span class="text-muted-foreground">· {{ props.doctor.reviews }} reviews</span>
         </div>
       </div>
-      <div class="text-right">
-        <div class="font-display text-xl">€{{ props.doctor.price }}</div>
+      <div class="text-right shrink-0">
+        <div class="font-display text-lg sm:text-xl">€{{ props.doctor.price }}</div>
         <div class="text-[10px] uppercase tracking-widest text-muted-foreground">per visit</div>
       </div>
     </div>

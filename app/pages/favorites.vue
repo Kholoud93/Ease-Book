@@ -14,13 +14,13 @@ useSeoMeta({
 
 <template>
   <section class="bg-gradient-warm border-b border-border/60">
-    <div class="container py-20">
+    <div class="container py-14 sm:py-20">
       <p class="text-xs uppercase tracking-[0.25em] text-muted-foreground">Saved</p>
-      <h1 class="font-display text-5xl md:text-6xl mt-3">Your shortlist.</h1>
+      <h1 class="font-display text-4xl sm:text-5xl md:text-6xl mt-3">Your shortlist.</h1>
       <p class="mt-4 text-muted-foreground max-w-xl">A quiet collection of specialists you'd like to return to.</p>
     </div>
   </section>
-  <section class="container py-16">
+  <section class="container py-12 sm:py-16">
     <div v-if="favoriteDoctors.length === 0" class="border border-dashed border-border rounded-sm py-24 text-center">
       <p class="text-muted-foreground">No favorites yet. Tap the heart on any specialist to save them here.</p>
       <NuxtLink to="/search" class="mt-6 rounded-full inline-flex h-10 items-center px-6 bg-primary text-primary-foreground">Discover specialists</NuxtLink>

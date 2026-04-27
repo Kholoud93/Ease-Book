@@ -33,20 +33,20 @@ const submit = () => {
 </script>
 
 <template>
-  <section v-if="doctor && done" class="container py-32 text-center max-w-xl">
-    <h1 class="font-display text-5xl">Confirmed.</h1>
+  <section v-if="doctor && done" class="container py-20 sm:py-32 text-center max-w-xl">
+    <h1 class="font-display text-4xl sm:text-5xl">Confirmed.</h1>
     <p class="mt-4 text-muted-foreground">A gentle reminder will be sent before your visit with {{ doctor.name }} on {{ format(appointmentDate, "EEEE, MMMM d") }} at {{ time }}.</p>
   </section>
-  <section v-else-if="doctor" class="container grid lg:grid-cols-12 gap-12 py-16">
-    <form class="lg:col-span-7 space-y-6" @submit.prevent="submit">
-      <h1 class="font-display text-5xl">Your details</h1>
+  <section v-else-if="doctor" class="container grid lg:grid-cols-12 gap-8 sm:gap-12 py-12 sm:py-16">
+    <form class="lg:col-span-7 space-y-5 sm:space-y-6 order-2 lg:order-1" @submit.prevent="submit">
+      <h1 class="font-display text-4xl sm:text-5xl">Your details</h1>
       <input v-model="name" class="h-12 bg-card w-full rounded-sm border border-border px-3" placeholder="Full name" />
       <input v-model="email" type="email" class="h-12 bg-card w-full rounded-sm border border-border px-3" placeholder="Email" />
       <input v-model="card" class="h-12 bg-card w-full rounded-sm border border-border px-3" placeholder="Card number" />
-      <button class="rounded-full px-10 h-12 bg-primary text-primary-foreground">Confirm appointment · €{{ doctor.price }}</button>
+      <button class="rounded-full px-8 sm:px-10 h-12 bg-primary text-primary-foreground w-full sm:w-auto">Confirm appointment · €{{ doctor.price }}</button>
     </form>
-    <aside class="lg:col-span-5">
-      <div class="rounded-sm border border-border bg-card p-8">
+    <aside class="lg:col-span-5 order-1 lg:order-2">
+      <div class="rounded-sm border border-border bg-card p-5 sm:p-8">
         <p class="text-xs uppercase tracking-[0.25em] text-muted-foreground">Summary</p>
         <div class="mt-3">{{ doctor.name }} · {{ doctor.specialty }}</div>
       </div>
