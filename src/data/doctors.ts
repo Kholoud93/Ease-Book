@@ -1,0 +1,123 @@
+export type Doctor = {
+  id: string;
+  name: string;
+  specialty: string;
+  city: string;
+  clinic: string;
+  rating: number;
+  reviews: number;
+  experience: number;
+  price: number;
+  bio: string;
+  languages: string[];
+  education: string[];
+  image: string;
+  tags: string[];
+};
+
+const portrait = (seed: string) =>
+  `https://images.unsplash.com/${seed}?auto=format&fit=crop&w=800&q=80`;
+
+export const doctors: Doctor[] = [
+  {
+    id: "amelia-laurent",
+    name: "Dr. Amelia Laurent",
+    specialty: "Cardiology",
+    city: "Paris",
+    clinic: "Clinique Saint-Honoré",
+    rating: 4.9,
+    reviews: 312,
+    experience: 14,
+    price: 180,
+    bio: "Board-certified cardiologist with a focus on preventive care, women's heart health, and non-invasive diagnostics.",
+    languages: ["English", "French", "Italian"],
+    education: ["MD, Sorbonne Université", "Fellowship, Cleveland Clinic"],
+    image: portrait("photo-1559839734-2b71ea197ec2"),
+    tags: ["Preventive", "Women's health", "ECG"],
+  },
+  {
+    id: "rohan-mehta",
+    name: "Dr. Rohan Mehta",
+    specialty: "Dermatology",
+    city: "London",
+    clinic: "Marylebone Skin Atelier",
+    rating: 4.8,
+    reviews: 248,
+    experience: 11,
+    price: 150,
+    bio: "Specialist in medical and aesthetic dermatology, with deep expertise in pigmentation and acne management.",
+    languages: ["English", "Hindi"],
+    education: ["MBBS, AIIMS Delhi", "MRCP Dermatology, UK"],
+    image: portrait("photo-1622253692010-333f2da6031d"),
+    tags: ["Acne", "Pigmentation", "Aesthetic"],
+  },
+  {
+    id: "sofia-castellanos",
+    name: "Dr. Sofia Castellanos",
+    specialty: "Pediatrics",
+    city: "Barcelona",
+    clinic: "Clínica Petit Bon",
+    rating: 5.0,
+    reviews: 421,
+    experience: 16,
+    price: 120,
+    bio: "Warm, attentive pediatrician championing gentle, evidence-based care for children from infancy to adolescence.",
+    languages: ["Spanish", "Catalan", "English"],
+    education: ["MD, Universitat de Barcelona"],
+    image: portrait("photo-1594824476967-48c8b964273f"),
+    tags: ["Newborn", "Vaccination", "Nutrition"],
+  },
+  {
+    id: "kenji-tanaka",
+    name: "Dr. Kenji Tanaka",
+    specialty: "Orthopedics",
+    city: "Tokyo",
+    clinic: "Aoyama Joint Center",
+    rating: 4.7,
+    reviews: 198,
+    experience: 19,
+    price: 210,
+    bio: "Orthopedic surgeon specializing in sports medicine, minimally invasive knee and shoulder reconstruction.",
+    languages: ["Japanese", "English"],
+    education: ["MD, University of Tokyo"],
+    image: portrait("photo-1612349317150-e413f6a5b16d"),
+    tags: ["Sports", "Knee", "Shoulder"],
+  },
+  {
+    id: "noor-haddad",
+    name: "Dr. Noor Haddad",
+    specialty: "Neurology",
+    city: "Dubai",
+    clinic: "Jumeirah Neuro Institute",
+    rating: 4.9,
+    reviews: 276,
+    experience: 13,
+    price: 230,
+    bio: "Neurologist focused on migraine, cognitive health and women's neurological wellness across life stages.",
+    languages: ["Arabic", "English", "French"],
+    education: ["MD, AUB Beirut", "Fellowship, Mayo Clinic"],
+    image: portrait("photo-1551836022-deb4988cc6c0"),
+    tags: ["Migraine", "Cognitive", "EEG"],
+  },
+  {
+    id: "lukas-bergstrom",
+    name: "Dr. Lukas Bergström",
+    specialty: "Psychiatry",
+    city: "Stockholm",
+    clinic: "Östermalm Mind Studio",
+    rating: 4.8,
+    reviews: 184,
+    experience: 10,
+    price: 170,
+    bio: "Psychiatrist combining psychotherapy and modern pharmacology for anxiety, burnout and mood disorders.",
+    languages: ["Swedish", "English", "German"],
+    education: ["MD, Karolinska Institutet"],
+    image: portrait("photo-1537368910025-700350fe46c7"),
+    tags: ["Anxiety", "Burnout", "Therapy"],
+  },
+];
+
+export const specialties = Array.from(new Set(doctors.map((d) => d.specialty))).sort();
+export const cities = Array.from(new Set(doctors.map((d) => d.city))).sort();
+
+export const getDoctor = (id: string) => doctors.find((d) => d.id === id);
