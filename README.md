@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# BookEase
 
-TODO: Document your project here
+Nuxt 3 + Pinia application for doctor discovery and appointment booking.
